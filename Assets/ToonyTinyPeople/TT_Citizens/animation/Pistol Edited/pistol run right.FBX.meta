@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63c09b7f3b555114a8c46e36e9a16887
+guid: 83732bb93dc29439e811178b3eeea7e9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -70,9 +70,6 @@ ModelImporter:
       1: 100042
     second: //RootNode
   - first:
-      1: 100044
-    second: HEAD_CONTAINER
-  - first:
       4: 400000
     second: Bip001
   - first:
@@ -139,11 +136,8 @@ ModelImporter:
       4: 400042
     second: //RootNode
   - first:
-      4: 400044
-    second: HEAD_CONTAINER
-  - first:
       74: 7400000
-    second: m_jump_B_loop
+    second: pistol run right
   - first:
       95: 9500000
     second: //RootNode
@@ -177,13 +171,13 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: m_jump_B_loop
+      name: pistol run right
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -90
       level: 0
       cycleOffset: 0
       loop: 0
@@ -192,7 +186,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -242,8 +236,6 @@ ModelImporter:
         weight: 1
       - path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Neck/Bip001 Head
         weight: 1
-      - path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Neck/Bip001 Head/HEAD_CONTAINER
-        weight: 0
       - path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle
         weight: 1
       - path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm
