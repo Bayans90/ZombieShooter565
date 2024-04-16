@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638482047077693516
+      ticks: 638488227756321980
     m_Hash: 3208033738
   m_LockFileStatus:
     m_FilePath: C:/565GroupUnity/ZombieShooter565/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638482047077713570
+      ticks: 638488227756321980
     m_Hash: 4176299421
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -3442,6 +3442,7 @@ m_ResolvedPackages:
     - 1.4.1
     - 1.4.2
     - 1.4.3
+    - 1.4.4
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -3461,6 +3462,7 @@ m_ResolvedPackages:
     - 1.4.1
     - 1.4.2
     - 1.4.3
+    - 1.4.4
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
