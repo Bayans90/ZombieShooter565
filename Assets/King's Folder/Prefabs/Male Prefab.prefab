@@ -3569,6 +3569,7 @@ GameObject:
   - component: {fileID: 3081206118793813146}
   - component: {fileID: 3081206118792715994}
   - component: {fileID: 8309759797369835943}
+  - component: {fileID: 7279526522163580461}
   m_Layer: 6
   m_Name: w_wrench
   m_TagString: Untagged
@@ -3656,6 +3657,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 20
+  meleeCollider: {fileID: 7279526522163580461}
+--- !u!65 &7279526522163580461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512896}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.9142218, y: 0.057209704, z: 0.28067845}
+  m_Center: {x: -0.10220525, y: -0.0004533006, z: 0.00076561584}
 --- !u!1 &3081206118790512898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3691,7 @@ GameObject:
   - component: {fileID: 3081206118793813140}
   - component: {fileID: 3081206118792715988}
   - component: {fileID: 1876645841823284136}
+  - component: {fileID: 1052169472176901688}
   m_Layer: 6
   m_Name: w_katana
   m_TagString: Untagged
@@ -3755,6 +3779,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 30
+  meleeCollider: {fileID: 1052169472176901688}
+--- !u!65 &1052169472176901688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512898}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.4312235, y: 0.18008085, z: 0.17524205}
+  m_Center: {x: -0.2817576, y: 0.0003829773, z: 0.014868443}
 --- !u!1 &3081206118790512900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3767,6 +3813,7 @@ GameObject:
   - component: {fileID: 3081206118793813150}
   - component: {fileID: 3081206118792715998}
   - component: {fileID: 957002529328326479}
+  - component: {fileID: 8346671285823305181}
   m_Layer: 6
   m_Name: w_shotgun
   m_TagString: Untagged
@@ -3854,6 +3901,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 0
   attackPoints: 40
+  meleeCollider: {fileID: 8346671285823305181}
+--- !u!65 &8346671285823305181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512900}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.4131173, y: 0.16260082, z: 0.79270494}
+  m_Center: {x: -0.055443678, y: 0.00019485515, z: 0.22177795}
 --- !u!1 &3081206118790512902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,6 +3935,7 @@ GameObject:
   - component: {fileID: 3081206118793813144}
   - component: {fileID: 3081206118792715992}
   - component: {fileID: 6166996228729850568}
+  - component: {fileID: 7437399360589023035}
   m_Layer: 6
   m_Name: w_twobarrel
   m_TagString: Untagged
@@ -3953,6 +4023,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 0
   attackPoints: 50
+  meleeCollider: {fileID: 7437399360589023035}
+--- !u!65 &7437399360589023035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.2532985, y: 0.17931226, z: 0.95830417}
+  m_Center: {x: -0.034746304, y: 0.0015459266, z: 0.15749647}
 --- !u!1 &3081206118790512904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +4057,7 @@ GameObject:
   - component: {fileID: 3081206118793813154}
   - component: {fileID: 3081206118792716002}
   - component: {fileID: 2813976418151748968}
+  - component: {fileID: 2923578432410581963}
   m_Layer: 6
   m_Name: w_policebatton
   m_TagString: Untagged
@@ -4052,6 +4145,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 13
+  meleeCollider: {fileID: 2923578432410581963}
+--- !u!65 &2923578432410581963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.51689357, y: 0.11835866, z: 0.65605557}
+  m_Center: {x: 0.1514821, y: -0.004017639, z: -0.09360854}
 --- !u!1 &3081206118790512906
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4179,7 @@ GameObject:
   - component: {fileID: 3081206118793813148}
   - component: {fileID: 3081206118792715996}
   - component: {fileID: 4978687444317364018}
+  - component: {fileID: 1568739091101693432}
   m_Layer: 6
   m_Name: w_revolver
   m_TagString: Untagged
@@ -4151,6 +4267,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 0
   attackPoints: 20
+  meleeCollider: {fileID: 1568739091101693432}
+--- !u!65 &1568739091101693432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.34290367, y: 0.17162, z: 0.5950204}
+  m_Center: {x: -0.05395188, y: -0.00039301786, z: 0.17943089}
 --- !u!1 &3081206118790512908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4301,7 @@ GameObject:
   - component: {fileID: 3081206118793813158}
   - component: {fileID: 3081206118792716006}
   - component: {fileID: 4134547108161594251}
+  - component: {fileID: 8497605836355386581}
   m_Layer: 6
   m_Name: w_pick
   m_TagString: Untagged
@@ -4250,6 +4389,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 15
+  meleeCollider: {fileID: 8497605836355386581}
+--- !u!65 &8497605836355386581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.8994429, y: 0.12068086, z: 0.728035}
+  m_Center: {x: -0.11111935, y: 0.0009508897, z: -0.029921757}
 --- !u!1 &3081206118790512910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +4423,7 @@ GameObject:
   - component: {fileID: 3081206118793813152}
   - component: {fileID: 3081206118792716000}
   - component: {fileID: 7721141949723027311}
+  - component: {fileID: 6268563988353473592}
   m_Layer: 6
   m_Name: w_pitchfork
   m_TagString: Untagged
@@ -4349,6 +4511,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 9
+  meleeCollider: {fileID: 6268563988353473592}
+--- !u!65 &6268563988353473592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.8332047, y: 0.40607363, z: 0.10759643}
+  m_Center: {x: -0.23656775, y: -0.0063311327, z: -0.011840281}
 --- !u!1 &3081206118790512912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4545,7 @@ GameObject:
   - component: {fileID: 3081206118793813162}
   - component: {fileID: 3081206118792716010}
   - component: {fileID: 4442235131033993121}
+  - component: {fileID: 3091780764207527803}
   m_Layer: 6
   m_Name: w_machete
   m_TagString: Untagged
@@ -4448,6 +4633,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 20
+  meleeCollider: {fileID: 3091780764207527803}
+--- !u!65 &3091780764207527803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.1423277, y: 0.06947156, z: 0.19325198}
+  m_Center: {x: -0.2736001, y: -0.001142962, z: 0.0033137605}
 --- !u!1 &3081206118790512914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,6 +4667,7 @@ GameObject:
   - component: {fileID: 3081206118793813156}
   - component: {fileID: 3081206118792716004}
   - component: {fileID: 8884216597122247541}
+  - component: {fileID: 6623954911679691616}
   m_Layer: 6
   m_Name: w_maul
   m_TagString: Untagged
@@ -4547,6 +4755,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 28
+  meleeCollider: {fileID: 6623954911679691616}
+--- !u!65 &6623954911679691616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512914}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.83149767, y: 0.15579008, z: 0.390444}
+  m_Center: {x: -0.086931825, y: -0.0011280675, z: -0.006109659}
 --- !u!1 &3081206118790512916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,6 +4789,7 @@ GameObject:
   - component: {fileID: 3081206118793813166}
   - component: {fileID: 3081206118792716014}
   - component: {fileID: 344831158885049158}
+  - component: {fileID: 7297912651578936061}
   m_Layer: 6
   m_Name: w_m4
   m_TagString: Untagged
@@ -4646,6 +4877,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 1
   attackPoints: 30
+  meleeCollider: {fileID: 7297912651578936061}
+--- !u!65 &7297912651578936061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.53032047, y: 0.19558874, z: 1.0206674}
+  m_Center: {x: -0.014727441, y: -0.00013251332, z: 0.24722627}
 --- !u!1 &3081206118790512918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4911,7 @@ GameObject:
   - component: {fileID: 3081206118793813160}
   - component: {fileID: 3081206118792716008}
   - component: {fileID: 4668217762446372564}
+  - component: {fileID: 8106142382452778044}
   m_Layer: 6
   m_Name: w_mac10
   m_TagString: Untagged
@@ -4745,6 +4999,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 1
   attackPoints: 22
+  meleeCollider: {fileID: 8106142382452778044}
+--- !u!65 &8106142382452778044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512918}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.5610417, y: 0.13429816, z: 0.61986196}
+  m_Center: {x: 0.045957834, y: 0.0006043083, z: 0.11541597}
 --- !u!1 &3081206118790512920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4757,6 +5033,7 @@ GameObject:
   - component: {fileID: 3081206118793813170}
   - component: {fileID: 3081206118792716018}
   - component: {fileID: 4989976008274175010}
+  - component: {fileID: 1786817590366271229}
   m_Layer: 6
   m_Name: w_heavywrench
   m_TagString: Untagged
@@ -4844,6 +5121,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 24
+  meleeCollider: {fileID: 1786817590366271229}
+--- !u!65 &1786817590366271229
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.0262377, y: 0.14970621, z: 0.31956974}
+  m_Center: {x: -0.20513833, y: 0.0012866055, z: 0.0009020901}
 --- !u!1 &3081206118790512922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,6 +5155,7 @@ GameObject:
   - component: {fileID: 3081206118793813164}
   - component: {fileID: 3081206118792716012}
   - component: {fileID: 7874363069902542575}
+  - component: {fileID: 594721506848144228}
   m_Layer: 6
   m_Name: w_knife
   m_TagString: Untagged
@@ -4943,6 +5243,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 15
+  meleeCollider: {fileID: 594721506848144228}
+--- !u!65 &594721506848144228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512922}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.90167373, y: 0.068866774, z: 0.17414406}
+  m_Center: {x: -0.14743775, y: 0.00000065469413, z: 0.035617616}
 --- !u!1 &3081206118790512924
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,6 +5277,7 @@ GameObject:
   - component: {fileID: 3081206118793813174}
   - component: {fileID: 3081206118792716022}
   - component: {fileID: 2215608138874779464}
+  - component: {fileID: 5771660152288618482}
   m_Layer: 6
   m_Name: w_handgun
   m_TagString: Untagged
@@ -5042,6 +5365,28 @@ MonoBehaviour:
   weaponType: 2
   isAuto_gun: 0
   attackPoints: 30
+  meleeCollider: {fileID: 5771660152288618482}
+--- !u!65 &5771660152288618482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512924}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.33490202, y: 0.102828056, z: 0.548041}
+  m_Center: {x: -0.0017219187, y: -0.0017430589, z: 0.11232203}
 --- !u!1 &3081206118790512926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,6 +5399,7 @@ GameObject:
   - component: {fileID: 3081206118793813168}
   - component: {fileID: 3081206118792716016}
   - component: {fileID: 6788044077830847036}
+  - component: {fileID: 8942832289285392588}
   m_Layer: 6
   m_Name: w_hatchet
   m_TagString: Untagged
@@ -5141,6 +5487,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 19
+  meleeCollider: {fileID: 8942832289285392588}
+--- !u!65 &8942832289285392588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512926}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.86632186, y: 0.109073214, z: 0.3810818}
+  m_Center: {x: -0.118611544, y: 0.0018853161, z: 0.10916724}
 --- !u!1 &3081206118790512928
 GameObject:
   m_ObjectHideFlags: 0
@@ -5153,6 +5521,7 @@ GameObject:
   - component: {fileID: 3081206118793813178}
   - component: {fileID: 3081206118792716026}
   - component: {fileID: 7568974139887988487}
+  - component: {fileID: 789324933790494618}
   m_Layer: 6
   m_Name: w_flipknife
   m_TagString: Untagged
@@ -5240,6 +5609,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 13
+  meleeCollider: {fileID: 789324933790494618}
+--- !u!65 &789324933790494618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.8632855, y: 0.082942046, z: 0.23819557}
+  m_Center: {x: -0.1218875, y: -0.003202318, z: -0.0029277238}
 --- !u!1 &3081206118790512930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,6 +5643,7 @@ GameObject:
   - component: {fileID: 3081206118793813172}
   - component: {fileID: 3081206118792716020}
   - component: {fileID: 4386808278096649338}
+  - component: {fileID: 4462655581658873092}
   m_Layer: 6
   m_Name: w_hammer
   m_TagString: Untagged
@@ -5339,6 +5731,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 25
+  meleeCollider: {fileID: 4462655581658873092}
+--- !u!65 &4462655581658873092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.8107635, y: 0.14287466, z: 0.45064116}
+  m_Center: {x: -0.09059179, y: -0.007380021, z: -0.00825913}
 --- !u!1 &3081206118790512932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,6 +5765,7 @@ GameObject:
   - component: {fileID: 3081206118793813182}
   - component: {fileID: 3081206118792716030}
   - component: {fileID: 7858147300819333375}
+  - component: {fileID: 4226897618380897440}
   m_Layer: 6
   m_Name: w_crowbar
   m_TagString: Untagged
@@ -5438,6 +5853,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 20
+  meleeCollider: {fileID: 4226897618380897440}
+--- !u!65 &4226897618380897440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.0157943, y: 0.11565304, z: 0.33109954}
+  m_Center: {x: -0.12099944, y: -0.00011110317, z: 0.09627367}
 --- !u!1 &3081206118790512934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,6 +5887,7 @@ GameObject:
   - component: {fileID: 3081206118793813176}
   - component: {fileID: 3081206118792716024}
   - component: {fileID: 4474067802167687586}
+  - component: {fileID: 3431193112847201241}
   m_Layer: 6
   m_Name: w_fireaxe
   m_TagString: Untagged
@@ -5537,6 +5975,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 25
+  meleeCollider: {fileID: 3431193112847201241}
+--- !u!65 &3431193112847201241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512934}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.0583124, y: 0.08617812, z: 0.5399425}
+  m_Center: {x: -0.1622615, y: 0.0007693423, z: 0.049761422}
 --- !u!1 &3081206118790512936
 GameObject:
   m_ObjectHideFlags: 0
@@ -5549,6 +6009,7 @@ GameObject:
   - component: {fileID: 3081206118793813186}
   - component: {fileID: 3081206118792715778}
   - component: {fileID: 7918863113585034165}
+  - component: {fileID: 3861708553323653609}
   m_Layer: 6
   m_Name: w_cleaver
   m_TagString: Untagged
@@ -5636,6 +6097,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 25
+  meleeCollider: {fileID: 3861708553323653609}
+--- !u!65 &3861708553323653609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512936}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.8145046, y: 0.068986535, z: 0.30529013}
+  m_Center: {x: -0.14998999, y: 0.00000023561927, z: 0.08756565}
 --- !u!1 &3081206118790512938
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,6 +6131,7 @@ GameObject:
   - component: {fileID: 3081206118793813180}
   - component: {fileID: 3081206118792716028}
   - component: {fileID: 7994429717542587939}
+  - component: {fileID: 8480267428355204515}
   m_Layer: 6
   m_Name: w_club
   m_TagString: Untagged
@@ -5735,6 +6219,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 18
+  meleeCollider: {fileID: 8480267428355204515}
+--- !u!65 &8480267428355204515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.15, y: 0.23971859, z: 0.4903392}
+  m_Center: {x: -0.2051062, y: -0.036275797, z: -0.004430667}
 --- !u!1 &3081206118790512940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5747,6 +6253,7 @@ GameObject:
   - component: {fileID: 3081206118793813190}
   - component: {fileID: 3081206118792715782}
   - component: {fileID: 8731259778059032818}
+  - component: {fileID: 1956721261932398038}
   m_Layer: 6
   m_Name: w_baseballbat
   m_TagString: Untagged
@@ -5834,6 +6341,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 10
+  meleeCollider: {fileID: 1956721261932398038}
+--- !u!65 &1956721261932398038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.1794747, y: 0.20961219, z: 0.18152972}
+  m_Center: {x: -0.2848233, y: 0.0011183036, z: 0.001695211}
 --- !u!1 &3081206118790512942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,6 +6375,7 @@ GameObject:
   - component: {fileID: 3081206118793813184}
   - component: {fileID: 3081206118792715776}
   - component: {fileID: 2158103581033646754}
+  - component: {fileID: 728919689925409220}
   m_Layer: 6
   m_Name: w_batton
   m_TagString: Untagged
@@ -5933,6 +6463,28 @@ MonoBehaviour:
   weaponType: 1
   isAuto_gun: 0
   attackPoints: 10
+  meleeCollider: {fileID: 728919689925409220}
+--- !u!65 &728919689925409220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081206118790512942}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.005802, y: 0.13632813, z: 0.14334354}
+  m_Center: {x: -0.23808032, y: -0.005664782, z: 0.00011092528}
 --- !u!1 &3081206118790512948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,6 +6723,9 @@ MonoBehaviour:
   speed: 2
   rigAim: {fileID: 507456138610986145}
   targetRigWeight: 0
+  forearmAim: {fileID: 6396862394843807308}
+  handAim: {fileID: 5196263175221432899}
+  handcontainerAim: {fileID: 7856200689059130691}
   prevSpeed: {x: 0, y: 0, z: 0}
   target: {fileID: 4740301192822368754}
 --- !u!143 &6913199513741549374
@@ -14624,7 +15179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8943349882027617532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14754,12 +15309,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6432319910772984936}
+  - {fileID: 3245272164348029473}
   - {fileID: 8151890899463806657}
   - {fileID: 9048528557779222186}
-  - {fileID: 5059593686116228846}
   - {fileID: 6321209692520318918}
+  - {fileID: 5059593686116228846}
   - {fileID: 3122502174205783163}
-  - {fileID: 3245272164348029473}
   m_Father: {fileID: 3081206118790421850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &507456138610986145
@@ -15536,7 +16091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2366080666005325695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15607,7 +16162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6321209692520318918
 Transform:
   m_ObjectHideFlags: 0
@@ -15694,7 +16249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1809676525083899142
 RectTransform:
   m_ObjectHideFlags: 0

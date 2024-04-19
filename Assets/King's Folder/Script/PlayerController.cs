@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     public Rig rigAim;
     public float targetRigWeight;
-    
+    public GameObject forearmAim, handAim, handcontainerAim;
  
 
     public Vector3 prevSpeed;
@@ -518,6 +518,40 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Hit object is not tagged as Zombie.");
             }
         }
+    }
+
+    public void enableMeleeCollider()
+    {
+        if(currentMelee != -1)
+        {
+           WeaponStat melee = weapons.melee[currentMelee].GetComponentInChildren<WeaponStat>();
+            melee.ActivateCollider();
+        }
+    }
+
+    public void disableMeleeCollider()
+    {
+        if(currentMelee != -1)
+        {
+            WeaponStat melee = weapons.melee[currentMelee].GetComponentInChildren<WeaponStat>();
+            melee.DeactivateCollider();
+        }
+    }
+
+
+    public void disableHandAim()
+    {
+        forearmAim.SetActive(false);
+        handAim.SetActive(false);
+        handcontainerAim.SetActive(false);
+
+    }
+
+    public void enableHandAim()
+    {
+        forearmAim.SetActive(true);
+        handAim.SetActive(true);
+        handcontainerAim.SetActive(true);
     }
 }
 
