@@ -23,14 +23,12 @@ public class WeaponStat : MonoBehaviour
         // Check if the collided object has the tag "Zombie"
         if (other.gameObject.CompareTag("Zombie") && weaponType == 1)
         {
-            // Apply damage or other logic here
-            Debug.Log("Hit a zombie!");
+
 
             ZombieController zombie = other.gameObject.GetComponent<ZombieController>();
 
             zombie.takeDamage(attackPoints);
 
-            Debug.Log("Zombie health is:" + zombie.healthPoints);
             DeactivateCollider();
         }
     }

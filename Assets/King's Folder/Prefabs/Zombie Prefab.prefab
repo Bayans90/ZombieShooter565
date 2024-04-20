@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3904357929254854326}
+  - component: {fileID: 2037267993603684247}
+  - component: {fileID: 7706748343228191485}
   m_Layer: 0
   m_Name: R_hand_container
   m_TagString: Untagged
@@ -31,6 +33,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3904357929254854460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2037267993603684247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904357929254421206}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22, y: 0.28, z: 0.6}
+  m_Center: {x: 0.09, y: -0.04, z: -0.1}
+--- !u!114 &7706748343228191485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904357929254421206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f471324a76f42b19a0357c68e7d03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handCollider: {fileID: 2037267993603684247}
 --- !u!1 &3904357929254421208
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +79,7 @@ GameObject:
   - component: {fileID: 3904357929261854974}
   - component: {fileID: 1844058086440362568}
   - component: {fileID: 6661408874737164412}
+  - component: {fileID: 3678550237952706875}
   m_Layer: 0
   m_Name: TT_demo_zombie
   m_TagString: Zombie
@@ -59,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 3904357929254421208}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.802996, z: -0, w: 0.5959845}
-  m_LocalPosition: {x: 6.19, y: -0.36, z: -3.04}
+  m_LocalPosition: {x: 0, y: 0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80,7 +117,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: afeda541b99764146a5b066e3ee205e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -129,7 +166,31 @@ MonoBehaviour:
   healthPoints: 0
   animator: {fileID: 3904357929261854974}
   characterController: {fileID: 1844058086440362568}
+  zombieHand: {fileID: 3904357929254421206}
+  target: {fileID: 0}
   prevHealthPoints: 0
+--- !u!195 &3678550237952706875
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904357929254421208}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 5
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3904357929254421212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1232,7 @@ Transform:
   m_GameObject: {fileID: 4539422451516644474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -392.5076, y: 70.43068, z: 49.895195}
+  m_LocalPosition: {x: -392.08, y: 70.7, z: 49.895195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

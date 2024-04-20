@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieController : MonoBehaviour
 {
@@ -9,13 +10,27 @@ public class ZombieController : MonoBehaviour
     public CharacterController characterController;
 
 
+    //public BoxCollider handCollider;
+
+    public GameObject zombieHand;
+
+
+    NavMeshAgent nm;
+    public Transform target;
+
+
+
     public int prevHealthPoints;
+    private bool isDead;
 
     private void Awake()
     {
         healthPoints = 100;
         prevHealthPoints = healthPoints;
         characterController.enabled = true;
+        isDead = false;
+
+        nm = GetComponent<NavMeshAgent>();
     }
 
 
@@ -28,31 +43,66 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthPoints < prevHealthPoints)
+        float distance = Vector3.Distance(transform.position, target.position);
+        
+        if (!isDead)
         {
-            animator.SetBool("tookDamage",true);
+            if (distance <= 40f)
+            {
+                nm.destination = target.position;
+                if(distance <= 1.1f)
+                {
+                    animator.SetTrigger("Attack");
+                }
+            }
         }
-        else if(healthPoints == prevHealthPoints)
+
+
+
+
+
+
+        if(nm.velocity.magnitude > 0)
         {
-            animator.SetBool("tookDamage", false);
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
         }
 
 
+        if (healthPoints < prevHealthPoints)
+        {
+            animator.SetTrigger("tookDamage");
+        }
+        prevHealthPoints = healthPoints;
 
-        if(healthPoints <= 0)
+
+
+        if (healthPoints <= 0)
         {
             animator.SetBool("isDead", true);
             characterController.enabled = false;
+            isDead = true;
             
         }
-
-        prevHealthPoints = healthPoints;
     }
 
 
 
-    public void takeDamage(int damagePoint)
+    public void takeDamage(int damagePoints)
     {
-        healthPoints -= damagePoint;
+        healthPoints -= damagePoints;
+    }
+
+
+    public void enableHandCollider()
+    {
+        zombieHand.GetComponentInChildren<ZombieHand>().ActivateCollider();
+    }
+    public void disableHandCollider()
+    {
+        zombieHand.GetComponentInChildren<ZombieHand>().DeactivateCollider();
     }
 }
