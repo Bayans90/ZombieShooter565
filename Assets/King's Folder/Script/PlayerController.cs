@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Camera myCamera;
     public GameObject mainCamera;
     public GameObject aimCamera;
-    public GameObject upperBody;
+    //public GameObject upperBody;
 
     public LayerMask playerLayer;
 
