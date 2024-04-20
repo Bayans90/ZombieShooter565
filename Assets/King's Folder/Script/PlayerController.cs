@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject target;
 
+    public int healthPoints;
+    private int prevHealthPoints;
    
 
     void Awake()
@@ -74,6 +76,9 @@ public class PlayerController : MonoBehaviour
         currentGun = -1;
         targetRigWeight = 0f;
         crossHair.SetActive(false);
+
+        healthPoints = 100;
+        prevHealthPoints = 100;
     }
 
     void Start()
@@ -85,6 +90,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+      
+
         //Key Inputs
         forwardPressed = Input.GetKey("w");
         leftPressed = Input.GetKey("a");
@@ -94,6 +102,9 @@ public class PlayerController : MonoBehaviour
 
         rightMouse = Input.GetKey(KeyCode.Mouse1);
         leftMouse = Input.GetKey(KeyCode.F);
+
+
+      
 
         //if runPressed is true then use maxRunVelocity, if not then use maxWalkVelocity
         float currentMaxVelocity = runPressed ? maxRunVelocity : maxWalkVelocity;
@@ -351,6 +362,17 @@ public class PlayerController : MonoBehaviour
 
         rigAim.weight = Mathf.Lerp(rigAim.weight, targetRigWeight, Time.deltaTime * 20f);
 
+
+
+        Debug.Log("Prev Healthpoints: " + prevHealthPoints + ", Curr Healthpoints: " + healthPoints);
+        if (healthPoints < prevHealthPoints)
+        {
+            animator.SetTrigger("tookDamage");
+        }
+
+
+
+        prevHealthPoints = healthPoints;
     }
 
 
@@ -552,6 +574,13 @@ public class PlayerController : MonoBehaviour
         forearmAim.SetActive(true);
         handAim.SetActive(true);
         handcontainerAim.SetActive(true);
+    }
+
+
+
+    public void takeDamage(int damagePoints)
+    {
+        healthPoints -= damagePoints;
     }
 }
 
