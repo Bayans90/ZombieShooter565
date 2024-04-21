@@ -8,6 +8,7 @@ public class ZombieController : MonoBehaviour
     public Animator animator;
     public CharacterController characterController;
 
+    public bool isDead;
 
     public int prevHealthPoints;
 
@@ -41,9 +42,9 @@ public class ZombieController : MonoBehaviour
 
         if(healthPoints <= 0)
         {
+            isDead = true;
             animator.SetBool("isDead", true);
             characterController.enabled = false;
-            
         }
 
         prevHealthPoints = healthPoints;
