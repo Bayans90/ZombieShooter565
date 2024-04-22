@@ -37,7 +37,7 @@ public class ZombieSpawnController : MonoBehaviour
         for(int i = 0; i < currentZombiePW;++i)
         {
             //Offset from spawner to give spawn variety
-            Vector3 spawnOffset = new Vector3(Random.Range(-3f, 3f), 0f, Random.Range(-3f, 3f));
+            Vector3 spawnOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
             Vector3 spawnPosition = transform.position + spawnOffset;
 
             //Create the zombie
