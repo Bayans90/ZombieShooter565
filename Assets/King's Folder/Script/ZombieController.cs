@@ -18,8 +18,6 @@ public class ZombieController : MonoBehaviour
     NavMeshAgent nm;
     public Transform target;
 
-
-
     public int prevHealthPoints;
     private bool isDead;
 
@@ -50,17 +48,13 @@ public class ZombieController : MonoBehaviour
             if (distance <= 40f)
             {
                 nm.destination = target.position;
+
                 if(distance <= 1.1f)
                 {
                     animator.SetTrigger("Attack");
                 }
             }
         }
-
-
-
-
-
 
         if(nm.velocity.magnitude > 0)
         {
