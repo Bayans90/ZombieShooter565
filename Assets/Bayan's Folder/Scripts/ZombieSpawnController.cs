@@ -7,7 +7,7 @@ public class ZombieSpawnController : MonoBehaviour
     public int initialZombiePW = 3;
     public int currentZombiePW;
 
-    public float spawnDelay = 1.0f; //Delay of time between zombie spawns
+    public float spawnDelay = 3.0f; //Delay of time between zombie spawns
     public int currWave = 0;
     public float waveCool = 7.0f;
 
@@ -17,6 +17,7 @@ public class ZombieSpawnController : MonoBehaviour
     public List <ZombieController> currZombAlive;
 
     public GameObject zombiePrefab;
+    public Transform target;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class ZombieSpawnController : MonoBehaviour
 
             //Create the zombie
             var zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
-
+            zombie.gameObject.GetComponentInChildren<ZombieController>().target = target;
             //Retrieve Zombie Script 
             ZombieController zombieScript = zombie.GetComponent<ZombieController>();
 
