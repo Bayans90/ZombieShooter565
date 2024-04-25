@@ -5294,8 +5294,8 @@ Transform:
   m_GameObject: {fileID: 3081206118790512924}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000014901163, y: -0.00000001676381, z: 2.4980026e-16, w: 1}
-  m_LocalPosition: {x: 0.00000009689331, y: 0, z: 0.00000065402986}
-  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3081206118790421844}
@@ -6673,7 +6673,7 @@ Animator:
   m_GameObject: {fileID: 3081206118790512954}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8ed86b8ef3190a9429964c02eaa4f31c, type: 3}
-  m_Controller: {fileID: 9100000, guid: f951f053f8780451084d8da842dc8c8b, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea96ee9d8861b6c4a8a3516adad4fc71, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -6693,7 +6693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3081206118790512954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4a85c300450456bbf6d1e495bd3511, type: 3}
+  m_Script: {fileID: 11500000, guid: 8040feffc9f5045a7b9d2e271e22aa3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3081206118800012060}
@@ -6710,7 +6710,6 @@ MonoBehaviour:
   myCamera: {fileID: 4423593394583758174}
   mainCamera: {fileID: 5782024745069452776}
   aimCamera: {fileID: 844510258180524228}
-  upperBody: {fileID: 3081206118790512822}
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -6718,9 +6717,9 @@ MonoBehaviour:
   deceleration: 10
   maxWalkVelocity: 1
   maxRunVelocity: 2
-  jumpSpeed: 7
+  jumpSpeed: 8
   ySpeed: 0
-  speed: 2
+  speed: 0
   rigAim: {fileID: 507456138610986145}
   targetRigWeight: 0
   forearmAim: {fileID: 6396862394843807308}
@@ -6764,7 +6763,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3081206118790512954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a77cc3b09bbaa4e6c9bf5ecb75d7df3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 52fc0672c28414fe4a4d988ab7154cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseballbat: {fileID: 3081206118790512940}
@@ -15619,7 +15618,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4740301192822368754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5edd3f8d2a98c4bbc9ddc354e7e8fb97, type: 3}
+  m_Script: {fileID: 11500000, guid: 4373c9ce488d846059d661fd766f7dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myCamera: {fileID: 4423593394583758174}
