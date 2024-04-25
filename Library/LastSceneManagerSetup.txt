@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/King's Folder/Scene/King's Scene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
