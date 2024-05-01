@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             animator.SetBool("isJumping", true);
             isJumping = true;
@@ -526,18 +526,18 @@ public class PlayerController : MonoBehaviour
 
                 if (zombie != null)
                 {
-                    Debug.Log("Zombie component found.");
+                    //Debug.Log("Zombie component found.");
                     zombie.takeDamage(attackPoints);
-                    Debug.Log("Damage: " + attackPoints);
+                    //Debug.Log("Damage: " + attackPoints);
                 }
                 else
                 {
-                    Debug.Log("Zombie component not found on the hit object");
+                    //Debug.Log("Zombie component not found on the hit object");
                 }
             }
             else
             {
-                Debug.Log("Hit object is not tagged as Zombie.");
+                //Debug.Log("Hit object is not tagged as Zombie.");
             }
         }
     }
