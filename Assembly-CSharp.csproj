@@ -74,6 +74,8 @@
     <Compile Include="Assets/King&apos;s Folder/Script/PlayerSound.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Omar&apos;s Folder/Vefects/Free Fire VFX/Shaders/SH_Vefects_VFX_SRP_Particles_Erosion_01.shader" />
+    <None Include="Assets/Omar&apos;s Folder/Vefects/Free Fire VFX/Shaders/SH_Vefects_VFX_SRP_Heat_Haze_01.shader" />
     <None Include="Assets/POLYGON city pack/Read_me.txt" />
   </ItemGroup>
   <ItemGroup>
