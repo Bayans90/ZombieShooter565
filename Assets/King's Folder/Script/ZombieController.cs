@@ -79,7 +79,6 @@ public class ZombieController : MonoBehaviour
             animator.SetBool("isDead", true);
             characterController.enabled = false;
             isDead = true;
-            
         }
     }
 

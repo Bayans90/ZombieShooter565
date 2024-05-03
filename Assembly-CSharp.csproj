@@ -68,9 +68,20 @@
     <Compile Include="Assets\King&apos;s Folder\Script\ZombieHand.cs" />
     <Compile Include="Assets\King&apos;s Folder\Script\Weapons.cs" />
     <Compile Include="Assets\King&apos;s Folder\Script\GameManager.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\King&apos;s Folder\Script\ZombieAI.cs" />
   </ItemGroup>
   <ItemGroup>
+=======
+    <Compile Include="Assets\King&apos;s Folder\Script\PlayerSoundSteps.cs" />
+    <Compile Include="Assets\King&apos;s Folder\Script\ZombieAI.cs" />
+    <Compile Include="Assets\King&apos;s Folder\Script\ZombieSound.cs" />
+    <Compile Include="Assets\King&apos;s Folder\Script\PlayerSound.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Omar&apos;s Folder\Vefects\Free Fire VFX\Shaders\SH_Vefects_VFX_SRP_Particles_Erosion_01.shader" />
+    <None Include="Assets\Omar&apos;s Folder\Vefects\Free Fire VFX\Shaders\SH_Vefects_VFX_SRP_Heat_Haze_01.shader" />
+>>>>>>> Stashed changes
     <None Include="Assets\POLYGON city pack\Read_me.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -928,10 +939,13 @@
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+<<<<<<< Updated upstream
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+=======
+>>>>>>> Stashed changes
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Animation.Rigging.Editor">
