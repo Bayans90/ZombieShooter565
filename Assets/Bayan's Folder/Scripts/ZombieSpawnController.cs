@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZombieSpawnController : MonoBehaviour
 {
     public int initialZombiePW = 3;
-    public int currentZombiePW;
+    public double currentZombiePW;
 
     public float spawnDelay = 3.0f; //Delay of time between zombie spawns
     public int currWave = 0;
@@ -15,6 +15,7 @@ public class ZombieSpawnController : MonoBehaviour
     public float cooldownCounter = 0;
 
     public List <ZombieController> currZombAlive;
+    public List<ZombieController> removeZomb;
 
     public GameObject zombiePrefab;
     public Transform target;
@@ -45,7 +46,7 @@ public class ZombieSpawnController : MonoBehaviour
             var zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
             zombie.gameObject.GetComponentInChildren<ZombieController>().target = target;
             //Retrieve Zombie Script 
-            ZombieController zombieScript = zombie.GetComponent<ZombieController>();
+            ZombieController zombieScript = zombie.GetComponentInChildren<ZombieController>();
 
             //TrackZombie
             currZombAlive.Add(zombieScript);
@@ -57,12 +58,13 @@ public class ZombieSpawnController : MonoBehaviour
 
     private void Update()
     {
-        List<ZombieController> removeZomb = new List<ZombieController> ();
-        foreach (ZombieController zombie in removeZomb)
+        removeZomb = new List<ZombieController>();
+        foreach (ZombieController zombie in currZombAlive)
         {
             if (zombie.isDead)
             {
                 removeZomb.Add(zombie);
+                Destroy(zombie.gameObject, 5);
             }
         }
 
@@ -87,7 +89,7 @@ public class ZombieSpawnController : MonoBehaviour
 
         inCooldown = false;
 
-        currentZombiePW *= 2;
+        currentZombiePW *= 1.5;
         StartNextWave();
     }
 }
