@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public Camera myCamera;
     public GameObject mainCamera;
     public GameObject aimCamera;
-    //public GameObject upperBody;
 
     public LayerMask playerLayer;
 
@@ -342,7 +341,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (leftMouse)
+            if (leftMouse && currentMelee >= 0)
             {
                 animator.SetBool("leftMouse", true);
             }
@@ -359,6 +358,16 @@ public class PlayerController : MonoBehaviour
                 mainCamera.SetActive(false);
                 changeCrosshair();
                 crossHair.SetActive(true);
+
+                if (leftMouse && currentGun >= 0)
+                {
+                    animator.SetBool("leftMouse", true);
+                }
+                else
+                {
+                    animator.SetBool("leftMouse", false);
+                }
+
             }
             //Not aiming
             else if (!rightMouse)
