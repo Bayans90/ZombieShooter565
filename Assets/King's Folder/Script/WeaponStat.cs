@@ -11,6 +11,12 @@ public class WeaponStat : MonoBehaviour
     [SerializeField]
     private BoxCollider meleeCollider;
 
+    [SerializeField]
+    private AudioSource source;
+
+    [SerializeField]
+    private AudioClip meleehitClip;
+
 
 
     private void Awake()
@@ -28,6 +34,7 @@ public class WeaponStat : MonoBehaviour
             ZombieController zombie = other.gameObject.GetComponent<ZombieController>();
 
             zombie.takeDamage(attackPoints);
+            source.PlayOneShot(meleehitClip);
 
             DeactivateCollider();
         }
@@ -44,6 +51,4 @@ public class WeaponStat : MonoBehaviour
         // Set the collider as inactive
         meleeCollider.enabled = false;
     }
-
-
 }

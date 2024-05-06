@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public Camera myCamera;
     public GameObject mainCamera;
     public GameObject aimCamera;
-    //public GameObject upperBody;
 
     public LayerMask playerLayer;
 
@@ -49,6 +48,7 @@ public class PlayerController : MonoBehaviour
     bool isJumping;
     bool isMoving;
     bool isCombatMode = false;
+    public bool isDead;
 
 
     bool forwardPressed;
@@ -65,6 +65,10 @@ public class PlayerController : MonoBehaviour
 
     public int healthPoints;
     private int prevHealthPoints;
+
+
+    [SerializeField]
+    private GameObject muzzleFlash;
    
 
     void Awake()
@@ -77,8 +81,11 @@ public class PlayerController : MonoBehaviour
         targetRigWeight = 0f;
         crossHair.SetActive(false);
 
+        isDead = false;
         healthPoints = 100;
         prevHealthPoints = 100;
+
+        muzzleFlash.SetActive(false);
     }
 
     void Start()
@@ -104,275 +111,295 @@ public class PlayerController : MonoBehaviour
         leftMouse = Input.GetKey(KeyCode.F);
 
 
-      
 
-        //if runPressed is true then use maxRunVelocity, if not then use maxWalkVelocity
-        float currentMaxVelocity = runPressed ? maxRunVelocity : maxWalkVelocity;
-
-        //is the character moving (walking or running) ????
-        //useful when landing to know whether the animation should go to a moving animation or idle
-        if (forwardPressed || leftPressed || rightPressed || backwardPressed)
+        if(healthPoints <= 0)
         {
-            animator.SetBool("isMoving", true);
-            isMoving = true;
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-            isMoving = false;
+            isDead = true;
+            animator.SetBool("isDead", true);
         }
 
-        //If any of the "wasd" keys are pressed, it will increase the magnitude of velocityX and VelocityZ
-        if (forwardPressed && velocityZ < currentMaxVelocity)
+        if (!isDead)
         {
-            velocityZ += Time.deltaTime * acceleration;
-        }
-        if (leftPressed && velocityX > -currentMaxVelocity)
-        {
-            velocityX -= Time.deltaTime * acceleration;
-        }
-        if (rightPressed && velocityX < currentMaxVelocity)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        }
-        if (backwardPressed && velocityZ > -currentMaxVelocity)
-        {
-            velocityZ -= Time.deltaTime * acceleration;
-        }
+            //if runPressed is true then use maxRunVelocity, if not then use maxWalkVelocity
+            float currentMaxVelocity = runPressed ? maxRunVelocity : maxWalkVelocity;
 
-        //If any of the "wasd" keys ARE not pressed, it will decrease the magnitude of velocityX and velocityZ
-        if (!forwardPressed && velocityZ >= 0.0f)
-        {
-            velocityZ -= Time.deltaTime * acceleration;
-        }
-        if (!leftPressed && velocityX <= 0.0f)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        }
-        if (!rightPressed && velocityX >= 0.0f)
-        {
-            velocityX -= Time.deltaTime * acceleration;
-        }
-        if (!backwardPressed && velocityZ <= 0.0f)
-        {
-            velocityZ += Time.deltaTime * acceleration;
-        }
-
-        //IF a directional key and running key are pressed while the current velocity is greater
-        //than the currentMaxVelocity, set the velocity to the currentMax Velocity
-        //
-        //ELSE a directional key is pressed and a running key is not pressed, descelerate velocity to the walking velocity
-        if (forwardPressed && runPressed && velocityZ > currentMaxVelocity)
-        {
-            velocityZ = currentMaxVelocity;
-        }
-        else if (forwardPressed && velocityZ > currentMaxVelocity)
-        {
-            velocityZ -= Time.deltaTime * deceleration;
-        }
-        if (backwardPressed && runPressed && velocityZ < -currentMaxVelocity)
-        {
-            velocityZ = -currentMaxVelocity;
-        }
-        else if (backwardPressed && velocityZ < -currentMaxVelocity)
-        {
-            velocityZ += Time.deltaTime * deceleration;
-        }
-        if (rightPressed && runPressed && velocityX > currentMaxVelocity)
-        {
-            velocityX = currentMaxVelocity;
-        }
-        else if (rightPressed && velocityX > currentMaxVelocity)
-        {
-            velocityX -= Time.deltaTime * deceleration;
-        }
-        if (leftPressed && runPressed && velocityX < -currentMaxVelocity)
-        {
-            velocityX = -currentMaxVelocity;
-        }
-        else if (leftPressed && velocityX < -currentMaxVelocity)
-        {
-            velocityX += Time.deltaTime * deceleration;
-        }
-        if (velocityX > currentMaxVelocity)
-        {
-            velocityX = currentMaxVelocity;
-        }
-
-
-        //-----------------------
-        //IDLE DIRECTION HANDLING
-        //-----------------------
-        if(forwardPressed && idleZ <= 1f)
-        {
-            idleZ += Time.deltaTime * acceleration;
-
-        }
-        if(backwardPressed && idleZ >= -1f && !rightMouse)
-        {
-            if (!leftPressed) idleZ -= Time.deltaTime * acceleration;
-        }
-        if(rightPressed && idleX <= 1f && !rightMouse)
-        {
-            idleX += Time.deltaTime * acceleration;
-        }
-        if(leftPressed && idleX >= -1f && !rightMouse)
-        {
-            idleX -= Time.deltaTime * acceleration;
-        }
-        if(forwardPressed || backwardPressed)
-        {
-            if (!rightPressed && idleX > 0f) idleX -= Time.deltaTime * deceleration;
-            if (!leftPressed && idleX < 0f) idleX += Time.deltaTime * deceleration;
-        }
-        if(leftPressed || rightPressed)
-        {
-            if (!forwardPressed && idleZ > 0f) idleZ -= Time.deltaTime * deceleration;
-            if (!backwardPressed && idleZ < 0f) idleZ += Time.deltaTime * deceleration;
-        }
-        //handle
-        if (backwardPressed && idleZ <= 1f && rightMouse)
-        {
-            idleZ += Time.deltaTime * acceleration;
-        }
-        if (leftPressed && backwardPressed && idleX <= 1f && rightMouse)
-        {
-            idleX += Time.deltaTime * acceleration;
-        }
-        if (rightPressed && backwardPressed && idleX >= -1f && rightMouse)
-        {
-            idleX -= Time.deltaTime * acceleration;
-        }
-
-
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetBool("isJumping", true);
-            isJumping = true;
-            ySpeed = jumpSpeed;
-            isGrounded = false;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            animator.SetBool("isJumping", false);
-        }
-
-
-
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        if (isJumping && !isGrounded)
-        {
-            Vector3 velocity = new Vector3(horizontalInput * currentMaxVelocity, ySpeed, verticalInput * currentMaxVelocity);
-            Vector3 worldVelocity = transform.TransformDirection(velocity);
-            ySpeed += Physics.gravity.y * Time.deltaTime;
-            characterController.Move(worldVelocity * Time.deltaTime);
-            if (isGrounded)
+            //is the character moving (walking or running) ????
+            //useful when landing to know whether the animation should go to a moving animation or idle
+            if (forwardPressed || leftPressed || rightPressed || backwardPressed)
             {
-                isJumping = false;
+                animator.SetBool("isMoving", true);
+                isMoving = true;
             }
-        }
-
-
-        if (characterController.velocity.x != 0f || characterController.velocity.y != 0f || characterController.velocity.z != 0f)
-        {
-            isGrounded = characterController.isGrounded;
-            animator.SetBool("isGrounded", isGrounded);
-        }
-        if(characterController.velocity == new Vector3(0f, 0f, 0f))
-        {
-            animator.SetBool("isGrounded", true);
-            isGrounded = true;
-        }
-
-
-
-        animator.SetFloat("VelocityZ", velocityZ);
-        animator.SetFloat("VelocityX", velocityX);
-        animator.SetFloat("IdleZ", idleZ);
-        animator.SetFloat("IdleX", idleX);
-
-
-
-        turn.x = Input.GetAxis("Mouse X");
-        turn.y = Input.GetAxis("Mouse Y");
-
-        RotatePlayer();
-        changeWeapon();
-
-
-        if(currentMelee == -1)
-        {
-            animator.SetBool("isMelee", false);
-        } else {
-            animator.SetBool("isMelee", true);
-        }
-
-
-        if(currentGun ==-1)
-        {
-            animator.SetBool("isHoldingGun", false);
-            animator.SetBool("isHoldingAutoGun", false);
-        }
-        else
-        {
-            animator.SetBool("isHoldingGun", true);
-            if (weapons.guns[currentGun].GetComponentInChildren<WeaponStat>().isAuto_gun)
+            else
             {
-                animator.SetBool("isHoldingAutoGun", true);
+                animator.SetBool("isMoving", false);
+                isMoving = false;
             }
+
+            //If any of the "wasd" keys are pressed, it will increase the magnitude of velocityX and VelocityZ
+            if (forwardPressed && velocityZ < currentMaxVelocity)
+            {
+                velocityZ += Time.deltaTime * acceleration;
+            }
+            if (leftPressed && velocityX > -currentMaxVelocity)
+            {
+                velocityX -= Time.deltaTime * acceleration;
+            }
+            if (rightPressed && velocityX < currentMaxVelocity)
+            {
+                velocityX += Time.deltaTime * acceleration;
+            }
+            if (backwardPressed && velocityZ > -currentMaxVelocity)
+            {
+                velocityZ -= Time.deltaTime * acceleration;
+            }
+
+            //If any of the "wasd" keys ARE not pressed, it will decrease the magnitude of velocityX and velocityZ
+            if (!forwardPressed && velocityZ >= 0.0f)
+            {
+                velocityZ -= Time.deltaTime * acceleration;
+            }
+            if (!leftPressed && velocityX <= 0.0f)
+            {
+                velocityX += Time.deltaTime * acceleration;
+            }
+            if (!rightPressed && velocityX >= 0.0f)
+            {
+                velocityX -= Time.deltaTime * acceleration;
+            }
+            if (!backwardPressed && velocityZ <= 0.0f)
+            {
+                velocityZ += Time.deltaTime * acceleration;
+            }
+
+            //IF a directional key and running key are pressed while the current velocity is greater
+            //than the currentMaxVelocity, set the velocity to the currentMax Velocity
+            //
+            //ELSE a directional key is pressed and a running key is not pressed, descelerate velocity to the walking velocity
+            if (forwardPressed && runPressed && velocityZ > currentMaxVelocity)
+            {
+                velocityZ = currentMaxVelocity;
+            }
+            else if (forwardPressed && velocityZ > currentMaxVelocity)
+            {
+                velocityZ -= Time.deltaTime * deceleration;
+            }
+            if (backwardPressed && runPressed && velocityZ < -currentMaxVelocity)
+            {
+                velocityZ = -currentMaxVelocity;
+            }
+            else if (backwardPressed && velocityZ < -currentMaxVelocity)
+            {
+                velocityZ += Time.deltaTime * deceleration;
+            }
+            if (rightPressed && runPressed && velocityX > currentMaxVelocity)
+            {
+                velocityX = currentMaxVelocity;
+            }
+            else if (rightPressed && velocityX > currentMaxVelocity)
+            {
+                velocityX -= Time.deltaTime * deceleration;
+            }
+            if (leftPressed && runPressed && velocityX < -currentMaxVelocity)
+            {
+                velocityX = -currentMaxVelocity;
+            }
+            else if (leftPressed && velocityX < -currentMaxVelocity)
+            {
+                velocityX += Time.deltaTime * deceleration;
+            }
+            if (velocityX > currentMaxVelocity)
+            {
+                velocityX = currentMaxVelocity;
+            }
+
+
+            //-----------------------
+            //IDLE DIRECTION HANDLING
+            //-----------------------
+            if (forwardPressed && idleZ <= 1f)
+            {
+                idleZ += Time.deltaTime * acceleration;
+
+            }
+            if (backwardPressed && idleZ >= -1f && !rightMouse)
+            {
+                if (!leftPressed) idleZ -= Time.deltaTime * acceleration;
+            }
+            if (rightPressed && idleX <= 1f && !rightMouse)
+            {
+                idleX += Time.deltaTime * acceleration;
+            }
+            if (leftPressed && idleX >= -1f && !rightMouse)
+            {
+                idleX -= Time.deltaTime * acceleration;
+            }
+            if (forwardPressed || backwardPressed)
+            {
+                if (!rightPressed && idleX > 0f) idleX -= Time.deltaTime * deceleration;
+                if (!leftPressed && idleX < 0f) idleX += Time.deltaTime * deceleration;
+            }
+            if (leftPressed || rightPressed)
+            {
+                if (!forwardPressed && idleZ > 0f) idleZ -= Time.deltaTime * deceleration;
+                if (!backwardPressed && idleZ < 0f) idleZ += Time.deltaTime * deceleration;
+            }
+            //handle
+            if (backwardPressed && idleZ <= 1f && rightMouse)
+            {
+                idleZ += Time.deltaTime * acceleration;
+            }
+            if (leftPressed && backwardPressed && idleX <= 1f && rightMouse)
+            {
+                idleX += Time.deltaTime * acceleration;
+            }
+            if (rightPressed && backwardPressed && idleX >= -1f && rightMouse)
+            {
+                idleX -= Time.deltaTime * acceleration;
+            }
+
+
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                animator.SetBool("isJumping", true);
+                isJumping = true;
+                ySpeed = jumpSpeed;
+                isGrounded = false;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                animator.SetBool("isJumping", false);
+            }
+
+
+
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            if (isJumping && !isGrounded)
+            {
+                Vector3 velocity = new Vector3(horizontalInput * currentMaxVelocity, ySpeed, verticalInput * currentMaxVelocity);
+                Vector3 worldVelocity = transform.TransformDirection(velocity);
+                ySpeed += Physics.gravity.y * Time.deltaTime;
+                characterController.Move(worldVelocity * Time.deltaTime);
+                if (isGrounded)
+                {
+                    isJumping = false;
+                }
+            }
+
+
+            if (characterController.velocity.x != 0f || characterController.velocity.y != 0f || characterController.velocity.z != 0f)
+            {
+                isGrounded = characterController.isGrounded;
+                animator.SetBool("isGrounded", isGrounded);
+            }
+            if (characterController.velocity == new Vector3(0f, 0f, 0f))
+            {
+                animator.SetBool("isGrounded", true);
+                isGrounded = true;
+            }
+
+
+
+            animator.SetFloat("VelocityZ", velocityZ);
+            animator.SetFloat("VelocityX", velocityX);
+            animator.SetFloat("IdleZ", idleZ);
+            animator.SetFloat("IdleX", idleX);
+
+
+
+            turn.x = Input.GetAxis("Mouse X");
+            turn.y = Input.GetAxis("Mouse Y");
+
+            RotatePlayer();
+            changeWeapon();
+
+
+            if (currentMelee == -1)
+            {
+                animator.SetBool("isMelee", false);
+            }
+            else
+            {
+                animator.SetBool("isMelee", true);
+            }
+
+
+            if (currentGun == -1)
+            {
+                animator.SetBool("isHoldingGun", false);
+                animator.SetBool("isHoldingAutoGun", false);
+            }
+            else
+            {
+                animator.SetBool("isHoldingGun", true);
+                if (weapons.guns[currentGun].GetComponentInChildren<WeaponStat>().isAuto_gun)
+                {
+                    animator.SetBool("isHoldingAutoGun", true);
+                }
+            }
+
+            if (leftMouse && currentMelee >= 0)
+            {
+                animator.SetBool("leftMouse", true);
+            }
+            else
+            {
+                animator.SetBool("leftMouse", false);
+            }
+
+            //Aiming
+            if (rightMouse && currentGun != -1)
+            {
+                targetRigWeight = 1f;
+                animator.SetBool("isAiming", true);
+                mainCamera.SetActive(false);
+                changeCrosshair();
+                crossHair.SetActive(true);
+
+                if (leftMouse && currentGun >= 0)
+                {
+                    animator.SetBool("leftMouse", true);
+                }
+                else
+                {
+                    animator.SetBool("leftMouse", false);
+                }
+
+            }
+            //Not aiming
+            else if (!rightMouse)
+            {
+                targetRigWeight = 0f;
+                animator.SetBool("isAiming", false);
+                mainCamera.SetActive(true);
+                crossHair.SetActive(false);
+            }
+            //Not aiming
+            else if (rightMouse && currentGun == -1)
+            {
+                targetRigWeight = 0f;
+                animator.SetBool("isAiming", false);
+                mainCamera.SetActive(true);
+                crossHair.SetActive(false);
+            }
+
+            rigAim.weight = Mathf.Lerp(rigAim.weight, targetRigWeight, Time.deltaTime * 20f);
+
+
+
+            Debug.Log("Prev Healthpoints: " + prevHealthPoints + ", Curr Healthpoints: " + healthPoints);
+            if (healthPoints < prevHealthPoints)
+            {
+                animator.SetTrigger("tookDamage");
+            }
+
+
+
+            prevHealthPoints = healthPoints;
         }
-
-        if(leftMouse)
-        {
-            animator.SetBool("leftMouse", true);
-        }
-        else
-        {
-            animator.SetBool("leftMouse", false);
-        }
-
-        //Aiming
-        if (rightMouse && currentGun!= -1)
-        {
-            targetRigWeight = 1f;
-            animator.SetBool("isAiming", true);
-            mainCamera.SetActive(false);
-            changeCrosshair();
-            crossHair.SetActive(true);
-        }
-        //Not aiming
-        else if(!rightMouse)
-        {
-            targetRigWeight = 0f;
-            animator.SetBool("isAiming", false);
-            mainCamera.SetActive(true);
-            crossHair.SetActive(false);
-        }
-        //Not aiming
-        else if (rightMouse && currentGun == -1)
-        {
-            targetRigWeight = 0f;
-            animator.SetBool("isAiming", false);
-            mainCamera.SetActive(true);
-            crossHair.SetActive(false);
-        }
-
-        rigAim.weight = Mathf.Lerp(rigAim.weight, targetRigWeight, Time.deltaTime * 20f);
-
-
-
-        Debug.Log("Prev Healthpoints: " + prevHealthPoints + ", Curr Healthpoints: " + healthPoints);
-        if (healthPoints < prevHealthPoints)
-        {
-            animator.SetTrigger("tookDamage");
-        }
-
-
-
-        prevHealthPoints = healthPoints;
     }
 
 
@@ -517,6 +544,9 @@ public class PlayerController : MonoBehaviour
         // Perform the raycast
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~playerLayer))
         {
+            // Activate muzzle flash for 0.5 seconds
+            StartCoroutine(ActivateMuzzleFlash());
+
             // Check if the object hit has the tag "Zombie"
             if (hit.transform.tag.Equals("Zombie"))
             {
@@ -526,21 +556,31 @@ public class PlayerController : MonoBehaviour
 
                 if (zombie != null)
                 {
-                    Debug.Log("Zombie component found.");
+                    //Debug.Log("Zombie component found.");
                     zombie.takeDamage(attackPoints);
-                    Debug.Log("Damage: " + attackPoints);
+                    //Debug.Log("Damage: " + attackPoints);
                 }
                 else
                 {
-                    Debug.Log("Zombie component not found on the hit object");
+                    //Debug.Log("Zombie component not found on the hit object");
                 }
             }
             else
             {
-                Debug.Log("Hit object is not tagged as Zombie.");
+                //Debug.Log("Hit object is not tagged as Zombie.");
             }
         }
     }
+
+    private IEnumerator ActivateMuzzleFlash()
+    {
+        muzzleFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        muzzleFlash.SetActive(false);
+    }
+
+
+
 
     public void enableMeleeCollider()
     {

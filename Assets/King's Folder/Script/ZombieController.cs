@@ -21,6 +21,12 @@ public class ZombieController : MonoBehaviour
     public int prevHealthPoints;
     public bool isDead;
 
+
+    public AudioSource source;
+    public AudioSource attackSource;
+    public AudioClip zombieGrowl1, zombieGrowl2, zombieGrowl3;
+    public AudioClip zombieAttack1, zombieAttack2, zombieAttack3;
+
     private void Awake()
     {
         healthPoints = 100;
@@ -35,7 +41,7 @@ public class ZombieController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+           
     }
 
     // Update is called once per frame
@@ -45,15 +51,24 @@ public class ZombieController : MonoBehaviour
         
         if (!isDead)
         {
+            if (!source.isPlaying)
+            {
+                PlayRandomGrowl();
+            }
             if (distance <= 100f)
             {
                 nm.destination = target.position;
 
                 if(distance <= 1.1f)
                 {
+                    source.Stop();
                     animator.SetTrigger("Attack");
                 }
             }
+        }
+        else
+        {
+            nm.isStopped = true;
         }
 
         if(nm.velocity.magnitude > 0)
@@ -98,5 +113,41 @@ public class ZombieController : MonoBehaviour
     public void disableHandCollider()
     {
         zombieHand.GetComponentInChildren<ZombieHand>().DeactivateCollider();
+    }
+
+
+    private void PlayRandomGrowl()
+    {
+        int randomIndex = Random.Range(0, 3);
+        switch (randomIndex)
+        {
+            case 0:
+                source.PlayOneShot(zombieGrowl1);
+                break;
+            case 1:
+                source.PlayOneShot(zombieGrowl2);
+                break;
+            case 2:
+                source.PlayOneShot(zombieGrowl3);
+                break;
+        }
+    }
+
+
+    private void PlayRandomAttack()
+    {
+        int randomIndex = Random.Range(0, 3);
+        switch (randomIndex)
+        {
+            case 0:
+                attackSource.PlayOneShot(zombieAttack1);
+                break;
+            case 1:
+                attackSource.PlayOneShot(zombieAttack2);
+                break;
+            case 2:
+                attackSource.PlayOneShot(zombieAttack3);
+                break;
+        }
     }
 }
